@@ -1,0 +1,20 @@
+.fontSelector {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  background-color: blue;
+}
+
+.fontSelectButton {
+  width: 150px;
+  background-color: yellow;
+  margin: 5px;
+}
+
+.fontSelectButton:hover {
+  background-color: gold;
+}
+
+.fontSelectHeader {
+  background-color: white;
+}

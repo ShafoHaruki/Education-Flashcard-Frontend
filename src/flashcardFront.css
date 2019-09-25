@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap");
+/*font-family: 'Liu Jian Mao Cao', cursive;*/
+@import url("https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap");
+/*font-family: 'ZCOOL KuaiLe', cursive;*/
+@import url("https://fonts.googleapis.com/css?family=Long+Cang&display=swap");
+/*font-family: 'Long Cang', cursive;*/
+@import url("https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap");
+/*font-family: "Ma Shan Zheng", cursive;*/
+
+.fontForChineseCharacters {
+  text-align: center;
+  font-size: 50px;
+}
+
+.liuJianMaoCao {
+  font-family: "Liu Jian Mao Cao", cursive;
+}
+
+.zcoolKuaiLe {
+  font-family: "ZCOOL KuaiLe", cursive;
+}
+
+.longCang {
+  font-family: "Long Cang", cursive;
+}
+
+.maShanZheng {
+  font-family: "Ma Shan Zheng", cursive;
+}
