@@ -1,8 +1,8 @@
 .topNavAndLowerPortion {
   display: flex;
   flex-direction: column;
-  width: 1300px;
-  background-color: chartreuse;
+  /* width: 1300px; */
+  background-color: brown;
 }
 
 .lowerPortion {
@@ -11,7 +11,7 @@
 }
 
 .rightNav {
-  width: 600px;
+  width: 800px;
   display: flex;
   flex-direction: column;
 }

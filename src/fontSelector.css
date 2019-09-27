@@ -1,14 +1,17 @@
 .fontSelector {
   display: flex;
   flex-direction: column;
-  height: 250px;
-  background-color: blue;
+  height: 288px;
+  width: 230px;
+  background-color: floralwhite;
 }
 
 .fontSelectButton {
-  width: 150px;
+  border-radius: 10px;
+  width: 190px;
+  height: 40px;
   background-color: yellow;
-  margin: 5px;
+  margin: auto;
 }
 
 .fontSelectButton:hover {
@@ -16,5 +19,9 @@
 }
 
 .fontSelectHeader {
-  background-color: white;
+  background-color: bisque;
+}
+
+.fontSelectHeader {
+  margin: 10px;
 }

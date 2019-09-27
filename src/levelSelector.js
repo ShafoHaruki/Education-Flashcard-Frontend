@@ -6,14 +6,7 @@ export default class LevelSelector extends React.Component {
     return (
       <div className="levelSelector">
         <p className="levelSelectHeader">THIS IS A LEVEL FILTER COMPONENT</p>
-        <button
-          className="levelSelectButton"
-          onClick={() => {
-            this.props.onLevelSelect("level1");
-          }}
-        >
-          Level 1
-        </button>
+        <button className="levelSelectButton">Level 1</button>
         <button className="levelSelectButton">Level 2</button>
         <button className="levelSelectButton">Level 3</button>
         <button className="levelSelectButton">Level 4</button>

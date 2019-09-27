@@ -1,8 +1,13 @@
 .flashcard {
   border: 2px solid red;
-  border-radius: 15px;
-  width: 250px;
+  border-radius: 50px;
+  width: 241px;
   height: 250px;
   margin: 5px;
+  padding: 10px;
   perspective: 100px;
+  background-color: blanchedalmond;
+}
+
+.flashcardBack {
 }

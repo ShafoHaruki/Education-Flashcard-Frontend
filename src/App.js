@@ -1,27 +1,11 @@
 import React from "react";
 import "./App.css";
-import KeywordSearch from "./keywordSearch";
-import LevelSelector from "./levelSelector";
+// import KeywordSearch from "./keywordSearch";
+// import LevelSelector from "./levelSelector";
 import FontSelector from "./fontSelector";
 import CardList from "./cardList";
 import TopNav from "./topNav";
-import Game from "./ticTacToe";
 
-class LevelSelectFn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      level: ""
-    };
-  }
-  onLevelSelect(level) {
-    this.setState({});
-  }
-
-  render() {
-    return <LevelSelector />;
-  }
-}
 class Content extends React.Component {
   constructor(props) {
     super(props);
@@ -42,8 +26,8 @@ class Content extends React.Component {
           <FontSelector
             onFontSelect={font => this.handleChangeFontName(font)}
           />
-          <LevelSelectFn />
-          <KeywordSearch />
+          {/* <KeywordSearch /> */}
+          {/* <LevelSelector /> */}
         </div>
       </div>
     );
@@ -56,7 +40,6 @@ function App() {
       <div className="topNavAndLowerPortion">
         <TopNav />
         <Content />
-        <Game />
       </div>
     </div>
   );

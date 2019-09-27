@@ -8,7 +8,7 @@ export default class KeywordSelector extends React.Component {
         <p className="keywordSearchHeader">
           THIS IS A KEYWORD SEARCH COMPONENT
         </p>
-        <input type="text" value="Type here to filter cards by keyword" />
+        <input type="text" placeholder="Type here to filter cards by keyword" />
         <button>Search</button>
       </div>
     );

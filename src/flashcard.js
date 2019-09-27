@@ -25,11 +25,13 @@ export default class Flashcard extends React.Component {
           flipDirection="vertical"
         >
           <FlashcardFront
+            className="flashcardFront"
             key="front"
             character={this.props.card.character}
             fontClassName={this.props.fontClassName}
           />
           <FlashcardBack
+            className="flashcardBack"
             key="back"
             pinyin={this.props.card.pinyin}
             meaning={this.props.card.meaning}
@@ -38,6 +40,7 @@ export default class Flashcard extends React.Component {
           />
         </ReactCardFlip>
         <FrontAndBackButtons
+          className="frontAndBackButtons"
           onClickBack={() => {
             this.onClickBack();
           }}

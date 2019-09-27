@@ -5,7 +5,9 @@ export default class FontSelector extends React.Component {
   render() {
     return (
       <div className="fontSelector">
-        <p className="fontSelectHeader">THIS IS A FONT SELECT COMPONENT</p>
+        <p className="fontSelectHeader">
+          Spice up your learning with different funky fonts !
+        </p>
         <button
           className="fontSelectButton"
           onClick={() => {
