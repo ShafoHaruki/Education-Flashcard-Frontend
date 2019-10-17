@@ -1,5 +1,5 @@
 import React from "react";
-import TopNav from "./topNav";
+import TopNav from "../topNav";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 

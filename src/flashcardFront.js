@@ -1,5 +1,5 @@
 import React from "react";
-import "./flashcardFront.css";
+import "./CSS/flashcardFront.css";
 
 export default class FlashcardFront extends React.Component {
   render() {

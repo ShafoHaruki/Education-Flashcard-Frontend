@@ -2,8 +2,10 @@ import React from "react";
 import FlashcardFront from "./flashcardFront";
 import FlashcardBack from "./flashcardBack";
 import FrontAndBackButtons from "./frontAndBackButtons";
-import "./flashcard.css";
+import "./CSS/flashcard.css";
 import ReactCardFlip from "react-card-flip";
+import DeleteButton from "./deleteButton";
+import axios from "axios";
 // https://www.npmjs.com/package/react-card-flip
 
 export default class Flashcard extends React.Component {
@@ -17,6 +19,31 @@ export default class Flashcard extends React.Component {
   onClickFront() {
     this.setState({ display: "front" });
   }
+  // //Maybe we don't do it here?
+  // getFlashcard() {
+  //   const url = "http://localhost:3000/flashcards";
+  //   axios
+  //     .get(url)
+  //     .then(res => {
+  //       this.setState({ kittens: res.data });
+  //     })
+  //     .catch(err => {
+  //       console.error(err);
+  //       this.setState({ kittens: [] });
+  //     });
+  // }
+  onClickDelete = id => {
+    const url = "http://localhost:3000/flashcards/" + id;
+    axios
+      .delete(url, { withCredentials: true })
+      .then(res => {
+        console.log(res);
+        // this.getFlashcard();
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
   render() {
     return (
       <div className="flashcard">
@@ -46,6 +73,12 @@ export default class Flashcard extends React.Component {
           }}
           onClickFront={() => {
             this.onClickFront();
+          }}
+        />
+        <DeleteButton
+          className="deleteButton"
+          onClickDelete={() => {
+            this.onClickDelete();
           }}
         />
       </div>

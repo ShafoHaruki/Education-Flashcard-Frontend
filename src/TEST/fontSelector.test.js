@@ -1,5 +1,5 @@
 import React from "react";
-import FontSelector from "./fontSelector";
+import FontSelector from "../fontSelector";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 

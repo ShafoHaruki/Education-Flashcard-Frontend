@@ -1,5 +1,5 @@
 import React from "react";
-import "./fontSelector.css";
+import "./CSS/fontSelector.css";
 
 export default class FontSelector extends React.Component {
   render() {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./flashcardBack.css";
+import "./CSS/flashcardBack.css";
 
 export default class FlashcardBack extends React.Component {
   render() {

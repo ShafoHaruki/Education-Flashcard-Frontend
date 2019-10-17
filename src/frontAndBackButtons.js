@@ -1,5 +1,4 @@
 import React from "react";
-import "./frontAndBackButtons.css";
 
 export default class FrontAndbackButtons extends React.Component {
   clickedFront() {
