@@ -1,3 +1,6 @@
+/*THESE ARE THE PRELOADED FLASHCARDS THAT ALL NEW USER SIGN UPS WILL HAVE
+*/
+
 export const chineseCardsData = [
   {
     id: 1,

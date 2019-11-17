@@ -29,19 +29,49 @@ class Content extends React.Component {
       });
   };
 
+  onDeleteFlashcard = id => {
+    const url = "http://localhost:3000/flashcards/" + id;
+    axios
+      .delete(url, { withCredentials: true })
+      .then(res => {
+        console.log(res);
+      })
+      .then(res => {
+        this.fetchAllFlashcards();
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
+  componentDidMount() {
+    this.fetchAllFlashcards();
+  }
+
   handleChangeFontName(fontName) {
     this.setState({ fontClassName: fontName });
   }
+
   render() {
     return (
       <div className="lowerPortion">
-        <CardList fontClassName={this.state.fontClassName} />
+        <CardList
+          fontClassName={this.state.fontClassName}
+          flashcard={this.state.flashcard}
+          onDelete={this.onDeleteFlashcard}
+        />
         <div className="rightNav">
           <MemberLogin />
           <FontSelector
             onFontSelect={font => this.handleChangeFontName(font)}
           />
-          <CardManipulator />
+          <CardManipulator
+            onAdd={newFlashcard => {
+              this.setState({
+                flashcard: this.state.flashcard.concat([newFlashcard])
+              });
+            }}
+          />
         </div>
       </div>
     );

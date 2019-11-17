@@ -51,7 +51,7 @@ export default class MemberLogin extends React.Component {
       )
       .then(res => {
         this.setState({
-          userStatus: `Congratulations, you have just signed up as Username: ${this.state.username}`
+          userStatus: `Congratulations, you have just signed up as Username: ${this.state.username}. Please log in to continue!`
         });
       })
       .catch(err => {
@@ -61,9 +61,17 @@ export default class MemberLogin extends React.Component {
   };
 
   logoutHandler = () => {
-    this.setState({
-      userStatus: "You have logged out, please come back again"
-    });
+    const url = "http://localhost:3000/users/logout";
+    axios
+      .post(url, {}, { withCredentials: true })
+      .then(res => {
+        this.setState({
+          userStatus: "You have logged out, please come back again"
+        });
+      })
+      .catch(err => {
+        console.error(err);
+      });
   };
 
   usernameInputHandler = username => {
@@ -92,6 +100,7 @@ export default class MemberLogin extends React.Component {
             placeholder="password"
           />
         </div>
+
         <button onClick={this.loginHandler}>Member Log in</button>
         <button onClick={this.logoutHandler}>Member log out</button>
         <p>User status:</p>

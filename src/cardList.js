@@ -1,48 +1,33 @@
 import React from "react";
 import "./CSS/cardList.css";
-// import { chineseCardsData } from "./data";
 import Flashcard from "./flashcard";
-import axios from "axios";
 
-export default class CardList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      flashcard: []
-    };
-  }
-  getFlashcard = () => {
-    const url = "http://localhost:3000/flashcards";
-    axios
-      .get(url)
-      .then(res => {
-        console.log(res)
-        this.setState({ flashcard: res.data });
-      })
-      .catch(err => {
-        console.error(err);
-        this.setState({ flashcard: [] });
-      });
-  };
-
-  componentDidMount() {
-    this.getFlashcard();
-  }
-  render() {
-    return (
-      <div>
-        <div className="cardList">
-          {this.state.flashcard.map(v => {
-            return (
-              <Flashcard
-                key={v.id}
-                card={v}
-                fontClassName={this.props.fontClassName}
-              />
-            );
-          })}
-        </div>
+//functional component because it doesn't depends on a state or life-cycle
+export default function CardList(props) {
+  return (
+    <div>
+      <div className="cardList">
+        {props.flashcard.map(v => {
+          return (
+            <p key={v._id || v.id}>
+              <div>
+                <Flashcard
+                  key={v._id || v.id}
+                  card={v}
+                  fontClassName={props.fontClassName}
+                />
+                <button
+                  className="deleteFlashcardButton"
+                  style={{ backgroundColor: "Red" }}
+                  onClick={() => props.onDelete(v._id || v.id)}
+                >
+                  Delete flashcard
+                </button>
+              </div>
+            </p>
+          );
+        })}
       </div>
-    );
-  }
+    </div>
+  );
 }

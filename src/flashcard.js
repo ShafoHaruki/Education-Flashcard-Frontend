@@ -4,14 +4,13 @@ import FlashcardBack from "./flashcardBack";
 import FrontAndBackButtons from "./frontAndBackButtons";
 import "./CSS/flashcard.css";
 import ReactCardFlip from "react-card-flip";
-import DeleteButton from "./deleteButton";
 import axios from "axios";
 // https://www.npmjs.com/package/react-card-flip
 
 export default class Flashcard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { display: "front" };
+    this.state = { display: "front", flashcard: [] };
   }
   onClickBack() {
     this.setState({ display: "back" });
@@ -19,26 +18,26 @@ export default class Flashcard extends React.Component {
   onClickFront() {
     this.setState({ display: "front" });
   }
-  // //Maybe we don't do it here?
-  // getFlashcard() {
-  //   const url = "http://localhost:3000/flashcards";
-  //   axios
-  //     .get(url)
-  //     .then(res => {
-  //       this.setState({ kittens: res.data });
-  //     })
-  //     .catch(err => {
-  //       console.error(err);
-  //       this.setState({ kittens: [] });
-  //     });
-  // }
+
+  fetchAllFlashcards = () => {
+    const url = "http://localhost:3000/flashcards";
+    axios
+      .get(url, { withCredentials: true })
+      .then(res => {
+        this.setState({ flashcard: res.data });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
   onClickDelete = id => {
     const url = "http://localhost:3000/flashcards/" + id;
     axios
       .delete(url, { withCredentials: true })
       .then(res => {
         console.log(res);
-        // this.getFlashcard();
+        this.fetchAllFlashcards();
       })
       .catch(err => {
         console.error(err);
@@ -73,12 +72,6 @@ export default class Flashcard extends React.Component {
           }}
           onClickFront={() => {
             this.onClickFront();
-          }}
-        />
-        <DeleteButton
-          className="deleteButton"
-          onClickDelete={() => {
-            this.onClickDelete();
           }}
         />
       </div>

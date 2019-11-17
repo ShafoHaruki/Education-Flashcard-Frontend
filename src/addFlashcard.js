@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class DeleteButton extends React.Component {
+export default class AddFlashcard extends React.Component {
     addedFlashcard() {
       this.props.onClickAddFlashcard();
     }
